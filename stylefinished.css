@@ -144,16 +144,20 @@ body, h1, h2, h3, p, img, ul, li {
         width: 100%;
         box-sizing: border-box;
     }
-  
+          
+    ul.navigation li a {
+        color:#fff;
+    }
+          
     ul.navigation {
         text-align: center;
         margin-top:20px;
+        padding: 30px 15px 15px;
     }
   
     ul.navigation li {
         display: block;
         margin: 0 0 10px;
-        padding: 30px 15px 15px;
     }
   
     div.content {
