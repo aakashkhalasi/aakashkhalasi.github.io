@@ -183,6 +183,10 @@ body, h1, h2, h3, p, img, ul, li {
         padding: 30px 15px 15px;
         box-sizing: border-box;
     }
+          
+    .list {
+        list-style: none;
+    }
   
     .float-left,
     .float-right {
