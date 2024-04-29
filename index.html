@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Web Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <h1>Progressive Web Application</h1>
+    </header>
+    <div id="content">
+        <h2>Main Characteristics of a PWA</h2>
+        <p>
+            Progressive Web Applications (PWAs) are web applications that provide a native app-like experience to users across multiple platforms and devices.
+            They are characterized by several key features:
+        </p>
+        <ul>
+            <li>Responsive: PWAs adapt and function seamlessly on any device or screen size.</li>
+            <li>Connectivity-independent: PWAs can work offline or in low connectivity environments, thanks to service workers that cache essential resources.</li>
+            <li>App-like interactions: PWAs offer smooth and immersive user experiences, including push notifications, full-screen mode, and home screen installation.</li>
+            <li>Progressive enhancement: PWAs utilize progressive enhancement to ensure basic functionality for all users while providing advanced features for modern browsers.</li>
+            <li>Secure: PWAs are served over HTTPS to ensure data integrity and user security.</li>
+        </ul>
+        <h2>Select Background Color</h2>
+        <select id="backgroundSelect">
+            <option value="lightblue">Light Blue</option>
+            <option value="lightgold">Light Gold</option>
+        </select>
+        <button onclick="changeBackground()">Change Background</button>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
