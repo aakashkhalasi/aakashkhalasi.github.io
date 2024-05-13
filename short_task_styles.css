@@ -22,16 +22,19 @@ main {
 
 .comparison {
     margin-bottom: 30px;
+    overflow-x: auto; /* Enable horizontal scrolling */
 }
 
 table {
-    width: 100%;
+    width: auto;
     border-collapse: collapse;
+    white-space: nowrap; /* Prevent table from wrapping */
 }
 
 th, td {
     padding: 10px;
     border: 1px solid #ccc;
+    min-width: 120px; /* Minimum column width */
 }
 
 th {
