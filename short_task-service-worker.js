@@ -6,22 +6,37 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', event => {
+    console.log('SW installed');
     event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => {
-                return cache.addAll(urlsToCache);
-            })
+        caches
+        .open(CACHE_NAME)
+        .then(cache => {
+            console.log('SW caching files');
+            cache.addAll(urlsToCache)
+        })
+        .then(() => self.skipWaiting())
+    );
+});
+
+self.addEventListener('activate', event => {
+    console.log('SW activated');
+    event.waitUntil(
+        caches.keys().then(keyNames => {
+            return Promise.all(
+                keyNames.map(key => {
+                    if(key !== CACHE_NAME) {
+                        console.log('SW clearing old caches');
+                        return caches.delete(key);
+                    }
+                })
+            );
+        })
     );
 });
 
 self.addEventListener('fetch', event => {
+    console.log('SW fetching');
     event.respondWith(
-        caches.match(event.request)
-            .then(response => {
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request);
-            })
+        fetch(event.request).catch(() => caches.match(event.request))
     );
 });
