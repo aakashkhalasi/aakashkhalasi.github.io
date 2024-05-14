@@ -1,7 +1,8 @@
 const CACHE_NAME = 'hybrid-solutions-comparison-v1';
 const urlsToCache = [
     '/',
-    '/styles.css'
+    '/shot_task.html',
+    '/short_task_styles.css'
 ];
 
 self.addEventListener('install', event => {
